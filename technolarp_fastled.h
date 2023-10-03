@@ -2,7 +2,7 @@
 
 #define NB_LEDS_MAX 50
 #define NB_COULEURS_MAX 5
-#define LED_DATA_PIN D0
+#define LED_DATA_PIN D4
 
 class M_fastled
 {
