@@ -27,6 +27,11 @@ M_fastled::M_fastled()
 	{
 		couleurs[i]=CRGB::Green;
 	}
+
+	for (uint8_t i=0;i<NB_LEDS_MAX;i++)
+	{
+		indexMatrix[i]=i;
+	}
 	
 	animActuelle = ANIM_NONE;
 	animForever = false;
@@ -73,7 +78,6 @@ void M_fastled::allLedOff(bool change)
 		FastLED.show();
 	}
 }
-
 
 void M_fastled::setNbLed(uint8_t nbLedsInit)
 {
@@ -239,7 +243,6 @@ void M_fastled::animationSerpent02Start(uint16_t intervalToSet, uint16_t dureeTo
 	allLedOn(couleurs[1], true);
 	previousMillis = millis();
 }
-
 
 bool M_fastled::isAnimActive()
 {
