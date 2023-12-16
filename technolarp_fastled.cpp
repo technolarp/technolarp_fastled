@@ -27,6 +27,12 @@ M_fastled::M_fastled()
 	{
 		couleurs[i]=CRGB::Green;
 	}
+
+	for (uint8_t i=0;i<NB_LEDS_MAX;i++)
+	{
+		indexMatrix[i]=i;
+		indextoSeuil[i]=0;
+	}
 	
 	animActuelle = ANIM_NONE;
 	animForever = false;
@@ -38,6 +44,7 @@ void M_fastled::ledOn(uint8_t ledToSet, CRGB colorToSet, bool change)
 
 	if (change)
 	{
+		FastLED.delay(1);
 		FastLED.show();
 	}
 }
@@ -50,6 +57,7 @@ void M_fastled::allLedOn(CRGB colorToSet, bool change)
 	}
 	if (change)
 	{
+		FastLED.delay(1);
 		FastLED.show();
 	}
 }
@@ -70,10 +78,10 @@ void M_fastled::allLedOff(bool change)
 	
 	if (change)
 	{
+		FastLED.delay(1);
 		FastLED.show();
 	}
 }
-
 
 void M_fastled::setNbLed(uint8_t nbLedsInit)
 {
@@ -92,6 +100,7 @@ void M_fastled::setBrightness(uint8_t newBrightness)
 
 void M_fastled::ledShow()
 {
+	FastLED.delay(1);
 	FastLED.show();
 }
 
@@ -240,7 +249,6 @@ void M_fastled::animationSerpent02Start(uint16_t intervalToSet, uint16_t dureeTo
 	previousMillis = millis();
 }
 
-
 bool M_fastled::isAnimActive()
 {
 	if (animActuelle == ANIM_NONE)
@@ -319,7 +327,8 @@ void M_fastled::controlBrightness(uint8_t maxBrightness)
         }
       }
       FastLED.setBrightness(map(indexBrightness,5,250,5,maxBrightness));
-      FastLED.show();
+      FastLED.delay(1);
+	  FastLED.show();
     }
   }
 }

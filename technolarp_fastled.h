@@ -37,6 +37,9 @@ class M_fastled
 	// tableau de leds neopixel
 	CRGB leds[NB_LEDS_MAX];
 
+	uint8_t indexMatrix[NB_LEDS_MAX];
+	uint8_t indextoSeuil[NB_LEDS_MAX];
+
 	void ledOn(uint8_t ledToSet, CRGB colorToSet, bool change);
 	void allLedOn(CRGB colorToSet, bool change);
 	void ledOff(uint8_t ledToSet, bool change);
