@@ -46,6 +46,7 @@ void M_fastled::ledOn(uint8_t ledToSet, CRGB colorToSet, bool change)
 	{
 		FastLED.delay(1);
 		FastLED.show();
+		FastLED.show();
 	}
 }
 
@@ -58,6 +59,7 @@ void M_fastled::allLedOn(CRGB colorToSet, bool change)
 	if (change)
 	{
 		FastLED.delay(1);
+		FastLED.show();
 		FastLED.show();
 	}
 }
