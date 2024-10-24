@@ -82,6 +82,7 @@ void M_fastled::allLedOff(bool change)
 	{
 		FastLED.delay(1);
 		FastLED.show();
+		FastLED.show();
 	}
 }
 
@@ -103,6 +104,7 @@ void M_fastled::setBrightness(uint8_t newBrightness)
 void M_fastled::ledShow()
 {
 	FastLED.delay(1);
+	FastLED.show();
 	FastLED.show();
 }
 
@@ -330,6 +332,7 @@ void M_fastled::controlBrightness(uint8_t maxBrightness)
       }
       FastLED.setBrightness(map(indexBrightness,5,250,5,maxBrightness));
       FastLED.delay(1);
+	  FastLED.show();
 	  FastLED.show();
     }
   }
